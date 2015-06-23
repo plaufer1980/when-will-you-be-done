@@ -1,0 +1,480 @@
+﻿<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>When will you be done? - A Lean Forecasting Case Study</title>
+		<meta name="description" content="A presentation about forecasting software delivery dates.">
+		<meta name="author" content="Peter Laufer">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-background="assets/deadline-progress.png" >
+					<h2>When will you be done?</h2>
+					<h4>A Lean Forecasting Case Study</h4>
+					<p>
+						<small>Created by Peter Laufer - @plaufer1980 - May 2015</small>
+					</p>
+				</section>
+
+				<section>
+					<h2>What is it all about?</h2>
+					<ol>
+						<li>Motivation</li>
+						<li>The Project</li>
+						<li>The Art of Estimation</li>
+						<li>Lean Forecasting</li>
+						<li>Data, Data, Data</li>
+						<li>What next?</li>
+				  </ol>
+				</section>
+
+				<section>
+					<section>
+						<h1>Motivation</h1>
+					</section>
+
+					<section>
+						<img src="assets/bdsm-toys.jpg" width="400" />
+						<h2>Fifty Shades of Grey</h2>
+						<ul>
+							<li>How long will it take?</li>
+							<li>When will you be done?</li>
+							<li>Will you be ready by ...?</li>
+							<li>We have to go live on ...!</li>
+							<li>...</li>
+					  </ul>
+					</section>
+
+					<section>
+						<h2>Agile will stop this Madness!</h2>
+						<p class="fragment">This is not true, because:</p>
+						<ul>
+							<li class="fragment">Resources (time, budget, etc.) are always finite.</li>
+							<li class="fragment">You always have to choose between options.</li>
+							<li class="fragment">You need estimates on revenue and cost per option.</li>
+					  </ul>
+					</section>
+				</section>
+
+        <section>
+					<section>
+						<h1>The Project</h1>
+					</section>
+
+					<section>
+						<img src="assets/srp-classic-vs-xcs.png"/>
+					</section>
+
+					<section>
+						<img src="assets/dsp-classic-vs-dso.png"/>
+					</section>
+
+					<section>
+						<h2>Specs in a Nutshell</h2>
+						<ul>
+							<li>Build a SRP with a touch-optimized Magellan</li>
+							<li>Build a touch-optimized Detailed Search Overlay</li>
+							<li class="fragment">Switch to a service-oriented Architecture</li>
+							<li class="fragment">Rebuild the Frontend Templates with Soy</li>
+							<li class="fragment">Don't forget Advertising, SEO and Trackings!</li>
+							<li class="fragment">... and btw. here's your new team</li>
+						</ul>
+						<p>&nbsp;</p>
+						<h3 class="fragment" style="color:red;">When will you be done?</h3>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>The Art of Estimation</h1>
+					</section>
+
+					<section>
+						<h2>Estimation by the Book</h2>
+						<img src="assets/Lehrbuch der Softwaretechnik.jpg"/>
+					</section>
+
+					<section>
+						<h2>The Analogy Method</h2>
+						<ul>
+							<li>How long did comparable projects take?</li>
+							<li>How much code can be re-used from other projects?</li>
+							<li>How much has to be written from scratch?</li>
+						</ul>
+						<p>&nbsp;</p>
+						<h3 class="fragment" style="color:red;">no data available</h3>
+					</section>
+
+					<section>
+						<h2>Lines of Code (LOC) Estimation</h2>
+						<ul>
+							<li>measure productivity of devs in LOC/year</li>
+							<li>estimate scope of project in LOC</li>
+							<li>estimate = project LOC / (avg devs LOC/year * no devs)</li>
+							<li>example: 21.000 LOC / (3.500 LOC/year * 3 devs) = 2 years</li>
+						</ul>
+						<p>&nbsp;</p>
+						<h3 class="fragment" style="color:red;">no data available</h3>
+					</section>
+
+					<section>
+						<img src="assets/FunctionPointMethod Form.gif" />
+					</section>
+
+					<section>
+						<h2>Function Point Method</h2>
+						<ul>
+							<li>create detailed project specification (Lastenheft)</li>
+							<li>classify all requirements in complexity</li>
+							<li>calculate Function Points (FP) per requirement</li>
+							<li>calculate total FPs</li>
+							<li>track and lookup "FP to time" table</li>
+						</ul>
+						<p>&nbsp;</p>
+						<h3 class="fragment" style="color:red;">no data available</h3>
+					</section>
+
+					<section>
+						<h2>Agile to the Rescue!</h2>
+					</section>
+
+					<section>
+						<h2>Planning Poker</h2>
+						<img src="assets/high-stakes-poker.jpg" />
+					</section>
+
+					<section>
+						<h2>Planning Poker</h2>
+						<ul>
+							<li>estimate all user stories with the team and derive Story Points</li>
+							<li>track teams velocity and calculate release date</li>
+							<li class="fragment" style="color:red">but, detailed estimation is very time consuming</li>
+							<li class="fragment" style="color:red">but, people don't get better at estimating</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Integral of Unhappiness</h2>
+						<img src="assets/integral-of-unhappiness.png" />
+					</section>
+
+					<section>
+						<h2>#NoEstimates</h2>
+						<img src="assets/no-bullshit-estimation-cards.jpg" />
+						<h3 class="fragment" style="color:red;">highly iterative, no forecast possible</h3>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Lean Forecasting</h1>
+					</section>
+
+					<section>
+						<h2>What is Lean Forecasting?</h2>
+						<ul>
+							<li>... modelling and simulating Software Projects</li>
+							<li>... using proven (and simple) probabilistic tools</li>
+							<li>... based on actual historical data from the team</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>How do I apply it?</h2>
+						<ul>
+							<li>gather and collect your backlog</li>
+							<li>work on tickets</li>
+							<li>track cycle times</li>
+							<li>calculate forecast on remaining backlog</li>
+							<li>(optional) track defect rate, scope creep, refactorings</li>
+						</ul>
+					</section>
+
+					<section>
+						<img src="assets/monte-carlo-sim.png"/>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Data, Data, Data</h1>
+					</section>
+
+					<section>
+						<img src="assets/backlog-start.png" />
+					</section>
+
+					<section>
+						<h2>Milestone 1</h2>
+						<table>
+							<thead>
+								<tr>
+									<th>Time</th>
+									<th>Epics</th>
+									<th>Tasks</th>
+									<th>Bugs</th>
+									<th>"Scope Creep"</th>
+									<th>avg WIP</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>08.09.-23.09.</td>
+									<td>3</td>
+									<td>19</td>
+									<td>2</td>
+									<td>633,33%</td>
+									<td>6</td>
+								</tr>
+							</tbody>
+						</table>
+						<p>&nbsp;</p>
+						<ul>
+							<li>Forecast for Project End: Jan 2nd (75%) - Jan 7th (100%)</li>
+							<li>Forecast for Milestone 2+3: Oct 30th</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Milestone 1, 2, 3</h2>
+						<table>
+							<thead>
+								<tr>
+									<th>Time</th>
+									<th>Epics</th>
+									<th>Tasks</th>
+									<th>Bugs</th>
+									<th>"Scope Creep"</th>
+									<th>avg WIP</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>08.09.-23.09.</td>
+									<td>3</td>
+									<td>19</td>
+									<td>2</td>
+									<td>633,33%</td>
+									<td>6</td>
+								</tr>
+								<tr>
+									<td>24.09.-30.10.</td>
+									<td>5</td>
+									<td>26</td>
+									<td>1</td>
+									<td>520%</td>
+									<td>9</td>
+								</tr>
+								<tr>
+									<td>24.09.-30.10.</td>
+									<td>8</td>
+									<td>33</td>
+									<td>2</td>
+									<td>412,50%</td>
+									<td>9</td>
+								</tr>
+							</tbody>
+						</table>
+						<p>&nbsp;</p>
+						<ul>
+							<li>Forecast for Project End: Feb 21st (75%) - Mar 3rd (100%)</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>The Full Project</h2>
+						<table>
+							<thead>
+								<tr>
+									<th>Milestone</th>
+									<th>Time</th>
+									<th>Epics</th>
+									<th>Tasks</th>
+									<th>Bugs</th>
+									<th>"Creep"</th>
+									<th>WIP</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>08.09.-23.09.</td>
+									<td>3</td>
+									<td>19</td>
+									<td>2</td>
+									<td>633,33%</td>
+									<td>6</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>24.09.-30.10.</td>
+									<td>5</td>
+									<td>26</td>
+									<td>1</td>
+									<td>520%</td>
+									<td>9</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>24.09.-30.10.</td>
+									<td>8</td>
+									<td>33</td>
+									<td>2</td>
+									<td>412,50%</td>
+									<td>9</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>31.10.-05.12.</td>
+									<td>1</td>
+									<td>61</td>
+									<td>20</td>
+									<td>6100%</td>
+									<td>13</td>
+								</tr>
+								<tr>
+									<td>5+6</td>
+									<td>06.12.-29.01.</td>
+									<td>11</td>
+									<td>70</td>
+									<td>45</td>
+									<td>636,36%</td>
+									<td>13</td>
+								</tr>
+								<tr>
+									<td>7+8+9</td>
+									<td>30.01.-12.03.</td>
+									<td>14</td>
+									<td>85</td>
+									<td>48</td>
+									<td>607,14%</td>
+									<td>16</td>
+								</tr>
+							</tbody>
+						</table>
+						<p>&nbsp;</p>
+						<ul>
+							<li>Forecast for Project End: pre M5 - Mar 12th, pre M7 - May 1st</li>
+						</ul>
+					</section>
+
+					<section>
+						<img src="assets/backlog-end.png" />
+					</section>
+
+					<section>
+						<h2>The Bottom Line</h2>
+						<ul>
+							<li>After 1st milestone we could already forecast, that a release in 2014 was very unlikely.</li>
+							<li>After 2nd/3rd milestone we were pretty confident to release within Q1 2015.</li>
+							<li>We didn't do a single estimation meeting with the team at all.</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Cycle Time Distribution</h2>
+						<img src="assets/ct-distribution.png"/>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>What next?</h1>
+					</section>
+
+					<section>
+						<h2>Learnings</h2>
+						<ul>
+							<li>Lean Forecasting can help estimating big projects.</li>
+							<li>Tracking actual cycle time, defect rate, etc. is really valuable.</li>
+							<li>You can accept the deadline if you're able to fight the scope.</li>
+							<li>"Negotiation is hard; mediation is easy."</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Room for Improvements</h2>
+						<ul>
+							<li>Limit WIP (increases predictability and flow)</li>
+							<li>Exclude holidays from calculations</li>
+							<li>Try backlog categorization in big and small items</li>
+							<li>Be brave, strive for simplicity and descope even more</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h1>Thanks!</h1>
+					<ul>
+						<li>The Deadline (Tom DeMarco)</li>
+						<li><a href="http://bit.ly/replenishment_pdf">Replenishment (M. Andrezak, A. Roock)</a></li>
+						<li><a href="http://brodzinski.com/2015/02/story-points-velocity-the-good-bits.html">Story Points and Velocity: The Good Bits</a></li>
+						<li><a href="https://estimation.lunarlogic.io/">no bullshit estimation cards</a></li>
+						<li><a href="http://www.infoq.com/presentations/agile-quantify">The Impact of Lean and Agile Quantified: 2014</a></li>
+						<li><a href="https://vimeo.com/80351675">Reliable #NoEstimates Forecasting using Data</a></li>
+						<li><a href="http://focusedobjective.com/wp-content/uploads/2013/05/Modeling-and-Simulating-Software-Projects-Troy-Magennis.pdf">Modeling and Simulating Software Projects (Troy Magennis)</a></li>
+						<li><a href="http://focusedobjective.com/software/downloads/">KanbanSim Downloads</a></li>
+					</ul>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
